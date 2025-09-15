@@ -1,0 +1,11 @@
+<button
+ [class]="'flex justify-center items-center m-2 hover:scale-105 transition-transform duration-150 ' + background"
+ onclick="selectPokemon"
+ >
+    <img 
+        src={{pokemonData.sprites.front_default}} 
+        alt="Una imagen de un pokemon"
+        class="group-hover:animate-bouncing transition duration-100 loop"
+        >
+    <p class="text-xl text-cyan-950">{{pokemon.name.toUpperCase()}}</p>
+</button>
