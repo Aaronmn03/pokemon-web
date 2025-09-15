@@ -2,10 +2,11 @@ import { Component, OnChanges } from '@angular/core';
 import { Input } from '@angular/core';
 import { PokemonService } from '../service/pokemon.service';
 import {typeColors} from '../../consts/type-colour'
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-pokemon-select',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './pokemon-select.html',
   styleUrl: './pokemon-select.css'
 })
@@ -27,5 +28,9 @@ export class PokemonSelect implements OnChanges{
       },
       error: err => console.error("Se ha encontrado un error buscando a un pokemon:", err),
     })
+  }
+
+  selectPokemon(){
+    alert(`${this.pokemon.name} te saluda :)`)
   }
 }

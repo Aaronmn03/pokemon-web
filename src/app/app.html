@@ -1,6 +1,8 @@
-<div class="bg-blue-400 flex flex-col text-center">
-  <h1 class="text-2xl">PULSA EN UN POKEMON</h1>
-  @for (pokemon of pokemonData.results; track $index) {
-    <app-pokemon-select [pokemon]="pokemon"></app-pokemon-select>
-  }
+<div class=" text-center p-8">
+<h1 class="text-5xl mb-8">PULSA EN UN POKEMON</h1>
+  <div class=" grid grid-cols-3 sm:grid-cols-6 lg:grid-cols-9 text-center">
+    @for (pokemon of pokemonData.results; track $index) {
+      <app-pokemon-select [pokemon]="pokemon"></app-pokemon-select>
+    }
+  </div>
 </div>

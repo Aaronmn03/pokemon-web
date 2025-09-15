@@ -1,4 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "tailwindcss";
 
+:root {
+  color-scheme: light dark; /* opción más habitual */
+}
 @plugin "@midudev/tailwind-animations";
