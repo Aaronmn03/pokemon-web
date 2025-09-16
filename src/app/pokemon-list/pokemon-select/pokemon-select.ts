@@ -15,6 +15,7 @@ export class PokemonSelect implements OnChanges{
   @Input() pokemon: any;
   pokemonData: any;
   background: string | undefined;
+  icon: string | undefined;
 
   constructor(private pokeService: PokemonService, private router: Router){}
 
@@ -25,7 +26,9 @@ export class PokemonSelect implements OnChanges{
   getPokemonByURL(){
     this.pokeService.fetchPokemonByURL(this.pokemon.url).subscribe({
       next: data => {this.pokemonData = data;
-        this.background = PokemonTypes.find(t => t.name === this.pokemonData.types[0].type.name)?.background
+        const typeData = PokemonTypes.find(t => t.name === this.pokemonData.types[0].type.name);
+        this.background = typeData?.background
+        this.icon = typeData?.image
       },
       error: err => console.error("Se ha encontrado un error buscando a un pokemon:", err),
     })
