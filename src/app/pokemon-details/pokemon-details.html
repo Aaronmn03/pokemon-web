@@ -30,5 +30,8 @@
         <div class="bg-black/10 animate-fade-in-up animate-delay-200 p-2 m-8 inline-flex rounded-2xl">
             <app-pokemon-details-types [pokemon_types]="pokemonData?.types"></app-pokemon-details-types>
         </div>
+        <div class="bg-black/10 animate-fade-in-up animate-delay-300 p-2 m-8 inline-flex rounded-2xl">
+            <app-pokemon-details-evolutions [pokemon_specie]="pokemonData?.species.url"></app-pokemon-details-evolutions>
+        </div>
     </main>
 </div>

@@ -6,11 +6,12 @@ import { PokemonTypes } from '../../consts/pokemon_types';
 import { Router } from '@angular/router'
 import { PokemonDetailsSprites } from "./pokemon-details-sprites/pokemon-details-sprites";
 import { PokemonDetailsTypes } from './pokemon-details-types/pokemon-details-types';
+import { PokemonDetailsEvolutions } from './pokemon-details-evolutions/pokemon-details-evolutions';
 
 @Component({
   selector: 'app-pokemon-details',
   standalone:true,
-  imports: [CommonModule, PokemonDetailsSprites, PokemonDetailsTypes],
+  imports: [CommonModule, PokemonDetailsSprites, PokemonDetailsTypes, PokemonDetailsEvolutions],
   templateUrl: './pokemon-details.html',
   styleUrl: './pokemon-details.css'
 })

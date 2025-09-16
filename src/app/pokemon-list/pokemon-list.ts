@@ -22,7 +22,6 @@ export class PokemonList implements OnInit{
       },
       error: err => console.error("Se ha encontrado un error mientras se obtenian los pokemon", err)
     })
-    
   }
 
   ngOnInit(){
