@@ -1,0 +1,34 @@
+<div
+    class="flex flex-col w-full h-screen bg-gradient-to-t from-transparent to-white/10"
+    [ngClass]="background"
+>
+    <header class="flex justify-center items-center h-1/7 w-full bg-gradient-to-b from-black/20 to-transparent from-90% animate-fade-in">
+        <button 
+            class="absolute left-4 text-5xl hover:text-7xl transition-all duration-200 hover:bg-black/20 rounded-full p-3"
+            (click)="home()"
+            >⌂</button>
+        <button 
+            class="text-5xl hover:text-7xl transition-all duration-200 absolute left-1/5 sm:left-1/10 hover:bg-black/20 rounded-full p-3"
+            (click)="previusPokemon()"
+            >←</button>
+        <img 
+            src={{pokemonData?.sprites?.front_default}} 
+            alt="Una imagen de un pokemon"
+            class="h-full rounded-full drop-shadow-black/70 drop-shadow-2xl"
+            >
+        <h1 class="text-6xl ml-20 sm:text-5xl">{{pokemonData?.name.toUpperCase()}}</h1>
+        <h1 class="text-3xl ml-20 sm:text-2xl text-white/60">Nº {{pokemonData?.id}}</h1>
+        <button 
+            class="text-5xl hover:text-7xl transition-all duration-200 absolute right-1/5 sm:right-1/10  hover:bg-black/20 rounded-full p-3"
+            (click)="nextPokemon()"
+            >→</button>
+    </header>
+    <main>
+        <div class="bg-black/10 animate-fade-in-up animate-delay-100 p-2 m-8 inline-flex rounded-2xl">
+            <app-pokemon-details-sprites [pokemon_sprites]="pokemonData?.sprites"></app-pokemon-details-sprites>
+        </div>
+        <div class="bg-black/10 animate-fade-in-up animate-delay-200 p-2 m-8 inline-flex rounded-2xl">
+            <app-pokemon-details-types [pokemon_types]="pokemonData?.types"></app-pokemon-details-types>
+        </div>
+    </main>
+</div>

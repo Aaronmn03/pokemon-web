@@ -1,0 +1,11 @@
+<div class="flex flex-row gap-5">
+    @for (type of types; track $index) {
+        <div class="relative group hover:bg-gradient-to-b from-transparent to-black/40 from-30% rounded-2xl">
+        <img 
+            class="w-16 "
+            [src]="type.url" 
+            alt="Tipo del pokemon">
+        <p class="opacity-0 absolute bottom-0 left-1/2 -translate-x-1/2 group-hover:animate-fade-in transition-all animate-duration-300">{{type.name.toUpperCase()}}</p>
+        </div>
+    }
+</div>

@@ -17,4 +17,8 @@ export class PokemonService {
   fetchPokemonByURL(url:string) {
     return this.http.get(url)
   }
+
+  fetchPokemonByID(id:string) {
+    return this.http.get(`${this.url}/${id}`)
+  }
 }
