@@ -1,6 +1,6 @@
 <div
-    class="flex flex-col w-full h-screen bg-gradient-to-t from-transparent to-white/10"
-    [ngClass]="background"
+  class="flex flex-col w-full h-screen bg-gradient-to-t from-gray-900/30 via-black/50 to-black text-white"
+  [ngClass]="background"
 >
     <header class="flex justify-center items-center h-1/7 w-full bg-gradient-to-b from-black/20 to-transparent from-90% animate-fade-in">
         <button 
@@ -16,22 +16,41 @@
             alt="Una imagen de un pokemon"
             class="h-full rounded-full drop-shadow-black/70 drop-shadow-2xl"
             >
-        <h1 class="text-6xl ml-20 sm:text-5xl">{{pokemonData?.name.toUpperCase()}}</h1>
-        <h1 class="text-3xl ml-20 sm:text-2xl text-white/60">Nº {{pokemonData?.id}}</h1>
+        <div class="flex flex-col justify-center items-center">
+            <h1 class="text-5xl ml-20 sm:text-4xl font-extrabold">{{pokemonData?.name.toUpperCase()}}</h1>
+            <h1 class="text-2xl ml-20 sm:text-xl text-white/60">Nº {{pokemonData?.id}}</h1>
+        </div>
         <button 
             class="text-5xl hover:text-7xl transition-all duration-200 absolute right-1/5 sm:right-1/10  hover:bg-black/20 rounded-full p-3"
             (click)="nextPokemon()"
             >→</button>
     </header>
-    <main>
-        <div class="bg-black/10 animate-fade-in-up animate-delay-100 p-2 m-8 inline-flex rounded-2xl">
+    <main class="grid grid-cols-1 md:grid-cols-3 gap-8 px-6 py-10 max-w-7xl mx-auto w-full">
+        <div class="bg-white/10 animate-fade-in-up animate-delay-100 p-2 inline-flex rounded-2xl border-2 border-white/10 shadow-lg">
             <app-pokemon-details-sprites [pokemon_sprites]="pokemonData?.sprites"></app-pokemon-details-sprites>
         </div>
-        <div class="bg-black/10 animate-fade-in-up animate-delay-200 p-2 m-8 inline-flex rounded-2xl">
+        <div
+        class="bg-white/10 backdrop-blur-md animate-fade-in-up animate-delay-300 p-2 rounded-2xl border border-white/10 md:col-span-2 shadow-lg"
+        >
+        <app-pokemon-details-evolutions
+            [pokemon_specie]="pokemonData?.species.url"
+        ></app-pokemon-details-evolutions>
+        </div>
+
+        <div class="bg-white/10 animate-fade-in-up animate-delay-200 p-2 inline-flex rounded-2xl border-2 border-white/10 shadow-lg md:col-span-2 justify-evenly gap-3">
+            <div class="flex flex-col backdrop-blur-2xl w-1/2 rounded-2xl text-2xl justify-center text-center font-semibold">
+                <p class="font-bold">Altura</p>
+                <p>{{pokemonData.height / 10}} m</p>
+            </div>
+            <div class="flex flex-col backdrop-blur-2xl w-1/2 rounded-2xl text-2xl justify-center text-center font-semibold">
+                <p class="font-bold">Peso</p>
+                <p>{{pokemonData.weight / 10}} kg</p>
+            </div>
+        </div>
+        
+        <div class="bg-white/10 animate-fade-in-up animate-delay-200 p-2 inline-flex rounded-2xl border-2 border-white/10 shadow-lg">
             <app-pokemon-details-types [pokemon_types]="pokemonData?.types"></app-pokemon-details-types>
         </div>
-        <div class="bg-black/10 animate-fade-in-up animate-delay-300 p-2 m-8 inline-flex rounded-2xl">
-            <app-pokemon-details-evolutions [pokemon_specie]="pokemonData?.species.url"></app-pokemon-details-evolutions>
-        </div>
+
     </main>
 </div>

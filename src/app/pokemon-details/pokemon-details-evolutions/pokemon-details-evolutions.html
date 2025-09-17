@@ -1,14 +1,21 @@
-<div class="flex">
-    @for (pokemon of pokemon_evolutions; track $index) {
-        <button 
-            class="hover:bg-black/20 rounded-2xl group relative"
-            (click)="selectEvolution(pokemon.id)"
-            >
-            <img 
-                class="w-30"
-                [src]="pokemon?.sprites?.front_default" 
-                alt="">
-            <p class="absolute opacity-0 group-hover:animate-fade-in-up bottom-0 left-1/2 -translate-x-1/2 text-xl">{{pokemon.name.toUpperCase()}}</p>
-        </button>
-    }
+<div
+  class="flex flex-wrap justify-center gap-6 mt-6 overflow-hidden"
+>
+  @for (pokemon of pokemon_evolutions; track $index) {
+    <button
+      class="relative flex flex-col items-center p-3 rounded-2xl bg-gradient-to-b from-black/40 to-black/20 hover:from-white/20 hover:to-white/10 transition-all duration-300 group"
+      (click)="selectEvolution(pokemon.id)"
+    >
+      <img
+        class="w-28 h-28 object-contain drop-shadow-md group-hover:scale-125 group-hover:drop-shadow-[0_0_20px_rgba(255,255,255,0.6)] transition-all duration-300"
+        [src]="pokemon?.sprites?.front_default"
+        alt="{{ pokemon.name }}"
+      />
+      <p
+        class="mt-2 px-3 py-1 bg-black/50 rounded-md text-sm md:text-lg text-white opacity-0 group-hover:animate-fade-in-down transition-opacity duration-300"
+      >
+        {{ pokemon.name.toUpperCase() }}
+      </p>
+    </button>
+  }
 </div>

@@ -1,43 +1,57 @@
-<div class="grid grid-cols-2 gap-2">
-    <div class="hover:bg-gradient-to-b from-black/40 to-white/80 rounded-xl group relative">
-        <img 
-            class="h-30 w-30 group-hover:drop-shadow-2xl group-hover:scale-150 drop-shadow-white group-hover:rotate-12 transition-all duration-500" 
-            src="{{pokemon_sprites?.front_default}}" 
-            alt="">
-        <p 
-            class="absolute top-3 left-1/2 -translate-1/2 text-slate-950 text-lg text-center opacity-0 group-hover:opacity-100 duration-300 transition-all"
-            >Front
-        </p>
-    </div>
-        <div class="hover:bg-gradient-to-b from-black/40 to-white/80 rounded-xl group relative">
-        <img 
-            class="h-30 w-30 group-hover:drop-shadow-2xl group-hover:scale-150 drop-shadow-white group-hover:rotate-12 transition-all duration-500" 
-            src="{{pokemon_sprites?.back_default}}" 
-            alt="">
-        <p
-            class="absolute top-3 left-1/2 -translate-1/2 text-slate-950 text-lg text-center opacity-0 group-hover:opacity-100 duration-300 transition-all"
-            >Back
-        </p>
-    </div>
-    <div class="hover:bg-gradient-to-b from-amber-200/40 to-white/80 rounded-xl group relative">
-        <img 
-            class="h-30 w-30 group-hover:drop-shadow-2xl group-hover:scale-150 drop-shadow-white group-hover:rotate-12 transition-all duration-500" 
-            src="{{pokemon_sprites?.front_shiny}}" 
-            alt="">
-        <p
-            class="absolute top-3 left-1/2 -translate-1/2 text-slate-950 text-lg text-center opacity-0 group-hover:opacity-100 duration-300 transition-all"
-            >Front
-        </p>
-    </div>
-        <div class="hover:bg-gradient-to-b from-amber-200/40 to-white/80 rounded-xl group relative">
-        <img 
-            class="h-30 w-30 group-hover:drop-shadow-2xl group-hover:scale-150 drop-shadow-white group-hover:rotate-12 transition-all duration-500" 
-            src="{{pokemon_sprites?.back_shiny}}" 
-            alt="">
-        <p
-            class="absolute top-3 left-1/2 -translate-1/2 text-slate-950 text-lg text-center opacity-0 group-hover:opacity-100 duration-300 transition-all"
-            >Back
-        </p>
-    </div>
+<div class="grid grid-cols-2 gap-4">
+  <!-- FRONT -->
+  <div class="group relative rounded-xl bg-gradient-to-b from-black/20 to-white/10 hover:from-black/40 hover:to-white/80 transition-all duration-500 flex items-center justify-center aspect-square">
+    <img 
+      class="w-24 md:w-32 xl:w-48 object-contain transition-transform duration-500 group-hover:scale-125 group-hover:rotate-6 drop-shadow-lg group-hover:drop-shadow-2xl" 
+      [src]="pokemon_sprites?.front_default" 
+      alt="Front"
+    >
+    <p 
+      class="absolute top-2 left-1/2 -translate-x-1/2 text-slate-950 text-lg font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+    >
+      Front
+    </p>
+  </div>
 
+  <!-- BACK -->
+  <div class="group relative rounded-xl bg-gradient-to-b from-black/20 to-white/10 hover:from-black/40 hover:to-white/80 transition-all duration-500 flex items-center justify-center aspect-square">
+    <img 
+      class="w-24 md:w-32 xl:w-48 object-contain transition-transform duration-500 group-hover:scale-125 group-hover:rotate-6 drop-shadow-lg group-hover:drop-shadow-2xl" 
+      [src]="pokemon_sprites?.back_default" 
+      alt="Back"
+    >
+    <p 
+      class="absolute top-2 left-1/2 -translate-x-1/2 text-slate-950 text-lg font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+    >
+      Back
+    </p>
+  </div>
+
+  <!-- FRONT SHINY -->
+  <div class="group relative rounded-xl bg-gradient-to-b from-amber-200/20 to-white/10 hover:from-amber-200/40 hover:to-white/80 transition-all duration-500 flex items-center justify-center aspect-square">
+    <img 
+      class="w-24 md:w-32 xl:w-48 object-contain transition-transform duration-500 group-hover:scale-125 group-hover:rotate-6 drop-shadow-lg group-hover:drop-shadow-2xl" 
+      [src]="pokemon_sprites?.front_shiny" 
+      alt="Front Shiny"
+    >
+    <p 
+      class="absolute top-2 left-1/2 -translate-x-1/2 text-slate-950 text-lg font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+    >
+      Shiny Front
+    </p>
+  </div>
+
+  <!-- BACK SHINY -->
+  <div class="group relative rounded-xl bg-gradient-to-b from-amber-200/20 to-white/10 hover:from-amber-200/40 hover:to-white/80 transition-all duration-500 flex items-center justify-center aspect-square">
+    <img 
+      class="w-24 md:w-32 xl:w-48 object-contain transition-transform duration-500 group-hover:scale-125 group-hover:rotate-6 drop-shadow-lg group-hover:drop-shadow-2xl" 
+      [src]="pokemon_sprites?.back_shiny" 
+      alt="Back Shiny"
+    >
+    <p 
+      class="absolute top-2 left-1/2 -translate-x-1/2 text-slate-950 text-lg font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+    >
+      Shiny Back
+    </p>
+  </div>
 </div>

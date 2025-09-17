@@ -1,11 +1,21 @@
-<div class="flex flex-row gap-5">
-    @for (type of types; track $index) {
-        <div class="relative group hover:bg-gradient-to-b from-transparent to-black/40 from-30% rounded-2xl">
-        <img 
-            class="w-16 "
-            [src]="type.url" 
-            alt="Tipo del pokemon">
-        <p class="opacity-0 absolute bottom-0 left-1/2 -translate-x-1/2 group-hover:animate-fade-in transition-all animate-duration-300">{{type.name.toUpperCase()}}</p>
-        </div>
-    }
+<div class="flex flex-row gap-5 flex-wrap justify-center">
+  @for (type of types; track $index) {
+    <div 
+      class="relative group rounded-2xl overflow-hidden w-24 h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 shadow-lg border border-white/10 hover:scale-105 transition-transform duration-300"
+    >
+      <img 
+        class="w-full h-full object-contain p-2" 
+        [src]="type.url" 
+        alt="Tipo del pokemon"
+      >
+      <!-- Overlay oscuro para dar contraste -->
+      <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      <!-- Nombre -->
+      <p 
+        class="absolute bottom-2 left-1/2 -translate-x-1/2 text-sm md:text-base font-bold text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+      >
+        {{ type.name.toUpperCase() }}
+      </p>
+    </div>
+  }
 </div>
