@@ -1,5 +1,17 @@
 <div class=" text-center p-8">
 <h1 class="text-5xl mb-8 font-extrabold">PULSA EN UN POKEMON</h1>
+
+  <div class="flex flex-row overflow-x-auto px-2 py-4 justify-center gap-8">
+    @for(generation of GENERATIONS; track $index) {
+      <app-generation-select
+        [generation]="generation"
+        (generationSelected)="handleGeneration($event)"
+      >
+      </app-generation-select>
+    }
+  </div>
+
+
   <div class=" grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-6 text-center">
     @for (pokemon of pokemonData.results; track $index) {
       <app-pokemon-select [pokemon]="pokemon"></app-pokemon-select>

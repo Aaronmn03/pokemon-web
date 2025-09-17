@@ -9,9 +9,9 @@ export class PokemonService {
 
   constructor(private http: HttpClient) {}
   
-  fetchPokemon() {
+  fetchPokemon(limit: string, offset: string) {
     //todo: Mas adelante pedir al usuario que busque los que quiera (el offset es para a partir de cual)
-    return this.http.get(`${this.url}?limit=151&offset=0`)
+    return this.http.get(`${this.url}?limit=${limit}&offset=${offset}`)
   }
 
   fetchPokemonByURL(url:string) {
